@@ -44,9 +44,9 @@ Exemple 3:
 . Entrée: 10
 . Sortie: 55
 
-EExplication: F(10) = 55
+Explication: F(10) = 55
 
-## stak
+## stack
 
 - Rust
 
