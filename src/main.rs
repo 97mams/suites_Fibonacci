@@ -1,23 +1,23 @@
 use std::io;
 
 fn suites_fibonacci(n: u32) -> u64 {
-    let mut init_values=0;
-    let mut next_value=1;
+    let mut valuer_initial=0;
+    let mut valuer_precedent=1;
     for _ in 0..n {
-        let temp = init_values + next_value;
-        init_values = next_value;
-        next_value = temp;
+        let somme = valuer_initial + valuer_precedent;
+        valuer_initial = valuer_precedent;
+        valuer_precedent = somme;
     }
-    init_values
+    valuer_initial
 }
 
 fn main() -> io::Result<()> {
-    println!("Please enter your name:");
+    println!("Entrée le nombre (n):");
     let mut input = String::new();
     io::stdin().read_line(&mut input)?;
-    let input = input.trim_end();
-    let n: u32 = input.parse().unwrap();
+    let entrer = input.trim_end();
+    let n: u32 = entrer.parse().unwrap();
     let fibs = suites_fibonacci(n);
-    println!("Fibonacci sequence: {:?}", fibs);
+    println!("Le {} ème nombre de Fibonacci est : {}", n   , fibs);
     Ok(())
 }
